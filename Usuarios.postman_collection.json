@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "a8f921d5-b05a-4141-a262-09a2dfa7403a",
+		"name": "Usuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50626184",
+		"_collection_link": "https://mfgl91-979850.postman.co/workspace/Mario-Felipe-Goenaga-Lozano's-W~62e523ba-feaa-4d25-8b9a-e4708eaea24e/collection/50626184-a8f921d5-b05a-4141-a262-09a2dfa7403a?action=share&source=collection_link&creator=50626184"
+	},
+	"item": [
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"GoenagaFinal3\",\n  \"email\": \"goenaga3@final.com\",\n  \"password\": \"Final1233*\",\n  \"role\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYThhZDExNC1kZmNmLTQ5MDgtODhmNS1mZTY0MDY0MDMyNTYiLCJ1c2VyTmFtZSI6IkdvZW5hZ2FGaW5hbCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA1OTY0MSwiZXhwIjoxNzY1MTQ2MDQxLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.NXOJegkDnT2kITpkxxYLieiQQeCjX5vYxxjX8L6oo-A"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users?pageSize=10&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener usuario por ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYThhZDExNC1kZmNmLTQ5MDgtODhmNS1mZTY0MDY0MDMyNTYiLCJ1c2VyTmFtZSI6IkdvZW5hZ2FGaW5hbCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA1OTY0MSwiZXhwIjoxNzY1MTQ2MDQxLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.NXOJegkDnT2kITpkxxYLieiQQeCjX5vYxxjX8L6oo-A"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/292754fb-0277-457a-af48-df6e25113ccf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"292754fb-0277-457a-af48-df6e25113ccf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYThhZDExNC1kZmNmLTQ5MDgtODhmNS1mZTY0MDY0MDMyNTYiLCJ1c2VyTmFtZSI6IkdvZW5hZ2FGaW5hbCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA1OTY0MSwiZXhwIjoxNzY1MTQ2MDQxLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.NXOJegkDnT2kITpkxxYLieiQQeCjX5vYxxjX8L6oo-A"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"GoenagaFinal333\",\n  \"email\": \"goenaga333@final.com\",\n  \"role\": \"User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/48371faa-62be-45bb-9ad9-3c20d91b6c71",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"48371faa-62be-45bb-9ad9-3c20d91b6c71"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYThhZDExNC1kZmNmLTQ5MDgtODhmNS1mZTY0MDY0MDMyNTYiLCJ1c2VyTmFtZSI6IkdvZW5hZ2FGaW5hbCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA1OTY0MSwiZXhwIjoxNzY1MTQ2MDQxLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.NXOJegkDnT2kITpkxxYLieiQQeCjX5vYxxjX8L6oo-A"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/292754fb-0277-457a-af48-df6e25113ccf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"292754fb-0277-457a-af48-df6e25113ccf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"goenaga@final.com\",\n  \"password\": \"Final123*\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYThhZDExNC1kZmNmLTQ5MDgtODhmNS1mZTY0MDY0MDMyNTYiLCJ1c2VyTmFtZSI6IkdvZW5hZ2FGaW5hbCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA3MTIxMCwiZXhwIjoxNzY1MTU3NjEwLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.0O29FhOVXc1dDL35OKnMB8fb6zv_0T8YrZ3MVM3s6NY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYThhZDExNC1kZmNmLTQ5MDgtODhmNS1mZTY0MDY0MDMyNTYiLCJ1c2VyTmFtZSI6IkdvZW5hZ2FGaW5hbCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA1OTY0MSwiZXhwIjoxNzY1MTQ2MDQxLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.NXOJegkDnT2kITpkxxYLieiQQeCjX5vYxxjX8L6oo-A"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar contraseña",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitar resetear contraseña",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Resetear contraseña",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

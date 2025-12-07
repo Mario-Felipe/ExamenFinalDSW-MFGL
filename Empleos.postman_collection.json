@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "e9927775-e9fc-4c4c-9c61-1f6b7ab24878",
+		"name": "Empleos",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50626184",
+		"_collection_link": "https://mfgl91-979850.postman.co/workspace/Mario-Felipe-Goenaga-Lozano's-W~62e523ba-feaa-4d25-8b9a-e4708eaea24e/collection/50626184-e9927775-e9fc-4c4c-9c61-1f6b7ab24878?action=share&source=collection_link&creator=50626184"
+	},
+	"item": [
+		{
+			"name": "Crear empleo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Analista Masas 2\",\n  \"categoria\": \"Fisica\",\n  \"areaTrabajo\": \"Laboratorio\",\n  \"empresa\": \"KubrikLab\",\n  \"nivel\": \"Profesional\",\n  \"sueldo\": 3800000,\n  \"funciones\": \"Analizar riesgos de personas\",\n  \"cargoJefe\": \"Ejecutivo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/empleos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleos"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar empleos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/empleos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleos"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener empleo por ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/empleos/d7763883-c865-4a34-906a-ea0022f8b7bd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleos",
+						"d7763883-c865-4a34-906a-ea0022f8b7bd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar empleo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Analista de Posibles Riesgos\",\n  \"categoria\": \"Probabilidad\",\n  \"areaTrabajo\": \"Seguros\",\n  \"empresa\": \"Prevenir S.A.S\",\n  \"nivel\": \"Profesional\",\n  \"sueldo\": 2800000,\n  \"funciones\": \"Analizar riesgos de personas\",\n  \"cargoJefe\": \"Ejecutivo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/empleos/7c6c700c-3f21-4a1f-9df8-7c6ba4f2333d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleos",
+						"7c6c700c-3f21-4a1f-9df8-7c6ba4f2333d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar empleo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/empleos/27f5d703-a8be-4894-b30e-e98eb52e67c9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"empleos",
+						"27f5d703-a8be-4894-b30e-e98eb52e67c9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
