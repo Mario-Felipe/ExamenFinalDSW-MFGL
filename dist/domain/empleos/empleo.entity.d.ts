@@ -1,0 +1,37 @@
+import { AggregateRoot } from '../shared/aggregate-root';
+import { AreaTrabajo } from './value-objects/area-trabajo.vo';
+import { CargoJefe } from './value-objects/cargo-jefe.vo';
+import { Categoria } from './value-objects/categoria.vo';
+import { EmpleoId } from './value-objects/empleo-id.vo';
+import { Empresa } from './value-objects/empresa.vo';
+import { Funciones } from './value-objects/funciones.vo';
+import { Nivel } from './value-objects/nivel.vo';
+import { Nombre } from './value-objects/nombre.vo';
+import { Sueldo } from './value-objects/sueldo.vo';
+export declare class Empleo extends AggregateRoot {
+    readonly id: EmpleoId;
+    private _nombre;
+    private _categoria;
+    private _areaTrabajo;
+    private _empresa;
+    private _nivel;
+    private _sueldo;
+    private _funciones;
+    private _cargoJefe;
+    private _createdAt;
+    private _updatedAt?;
+    private constructor();
+    static create(nombre: Nombre, categoria: Categoria, areaTrabajo: AreaTrabajo, empresa: Empresa, nivel: Nivel, sueldo: Sueldo, funciones: Funciones, cargoJefe: CargoJefe): Empleo;
+    static restore(id: EmpleoId, nombre: Nombre, categoria: Categoria, areaTrabajo: AreaTrabajo, empresa: Empresa, nivel: Nivel, sueldo: Sueldo, funciones: Funciones, cargoJefe: CargoJefe, createdAt: Date, updatedAt?: Date | null): Empleo;
+    get nombre(): Nombre;
+    get categoria(): Categoria;
+    get areaTrabajo(): AreaTrabajo;
+    get empresa(): Empresa;
+    get nivel(): Nivel;
+    get sueldo(): Sueldo;
+    get funciones(): Funciones;
+    get cargoJefe(): CargoJefe;
+    get createdAt(): Date;
+    get updatedAt(): Date | null | undefined;
+    update(nombre: Nombre, categoria: Categoria, areaTrabajo: AreaTrabajo, empresa: Empresa, nivel: Nivel, sueldo: Sueldo, funciones: Funciones, cargoJefe: CargoJefe): void;
+}
